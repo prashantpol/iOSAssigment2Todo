@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="102" id="Wd8-eY-Kt5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="102" id="Wd8-eY-Kt5" customClass="CustomTodoTableViewCell" customModule="Todo_Assigment2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wd8-eY-Kt5" id="FBe-wK-Zry">
@@ -46,17 +46,21 @@
                                                     <state key="normal" title="Edit"/>
                                                     <connections>
                                                         <action selector="btnEditTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UF-2Y-Yqw"/>
+                                                        <segue destination="Svv-dW-9Fy" kind="show" id="wSC-ZC-ihV"/>
                                                     </connections>
                                                 </button>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMY-Tb-yOb">
                                                     <rect key="frame" x="263" y="35" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <action selector="btnSwtich:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZTY-YI-254"/>
+                                                        <action selector="todoSwtiched:" destination="Wd8-eY-Kt5" eventType="valueChanged" id="W7X-Cf-zuZ"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="todolable" destination="uCz-9J-9K6" id="5ew-nr-1Kf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -66,14 +70,28 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="btnStwitch" destination="PMY-Tb-yOb" id="Sxv-0b-XtR"/>
-                        <outlet property="lblTodo" destination="uCz-9J-9K6" id="h7q-L6-jad"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="272.80000000000001" y="145.27736131934034"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="6PU-Fa-dCE">
+            <objects>
+                <viewController id="Svv-dW-9Fy" customClass="DetailViewController" customModule="Todo_Assigment2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aoA-dL-dzc"/>
+                        <viewControllerLayoutGuide type="bottom" id="e0Y-OU-gst"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hqz-ft-KMW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTC-ct-Llu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="145"/>
         </scene>
     </scenes>
 </document>

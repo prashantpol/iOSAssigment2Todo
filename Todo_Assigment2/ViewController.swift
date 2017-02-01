@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  Todo_Assigment2
-//
+//   Studend ID : 300906092
 //  Created by Prashant Pol on 2017-01-31.
 //  Copyright © 2017 Polorg. All rights reserved.
 //
@@ -12,7 +12,7 @@ class ViewController: UIViewController,UITableViewDataSource {
 
     let data: [String]=["Task1","Task2","Task3"]
     
-    @IBOutlet weak var lbl_todo: UILabel!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +27,8 @@ class ViewController: UIViewController,UITableViewDataSource {
 
     //edit button touched event
     @IBAction func btnEditTouched(_ sender: UIButton) {
+        print("btn")
+
     }
     
     
