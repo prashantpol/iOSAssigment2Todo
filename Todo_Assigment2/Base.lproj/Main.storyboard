@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Kt0-Kd-fK2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Todo -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Todo_Assigment2" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,36 +31,45 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wd8-eY-Kt5" id="FBe-wK-Zry">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCz-9J-9K6">
-                                                    <rect key="frame" x="16" y="40" width="239" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCz-9J-9K6">
+                                                    <rect key="frame" x="16" y="40.5" width="239" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-Wk-N8z">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-Wk-N8z">
                                                     <rect key="frame" x="320" y="35" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="kwz-za-1ev"/>
+                                                    </constraints>
                                                     <state key="normal" title="Edit"/>
                                                     <connections>
                                                         <action selector="btnEditTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UF-2Y-Yqw"/>
                                                         <segue destination="Svv-dW-9Fy" kind="show" id="wSC-ZC-ihV"/>
                                                     </connections>
                                                 </button>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMY-Tb-yOb">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMY-Tb-yOb">
                                                     <rect key="frame" x="263" y="35" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="todoSwtiched:" destination="Wd8-eY-Kt5" eventType="valueChanged" id="W7X-Cf-zuZ"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="u5s-Wk-N8z" secondAttribute="trailing" constant="17" id="1dU-Va-eHz"/>
+                                                <constraint firstItem="PMY-Tb-yOb" firstAttribute="top" secondItem="u5s-Wk-N8z" secondAttribute="top" id="C0J-9j-eKt"/>
+                                                <constraint firstItem="PMY-Tb-yOb" firstAttribute="leading" secondItem="uCz-9J-9K6" secondAttribute="trailing" constant="8" symbolic="YES" id="OLX-6U-oZa"/>
+                                                <constraint firstItem="u5s-Wk-N8z" firstAttribute="centerY" secondItem="FBe-wK-Zry" secondAttribute="centerY" id="VQc-j4-JaS"/>
+                                                <constraint firstItem="uCz-9J-9K6" firstAttribute="centerY" secondItem="PMY-Tb-yOb" secondAttribute="centerY" id="s9p-rl-mS6"/>
+                                                <constraint firstItem="uCz-9J-9K6" firstAttribute="leading" secondItem="FBe-wK-Zry" secondAttribute="leadingMargin" constant="8" id="ulJ-Tg-1aZ"/>
+                                                <constraint firstItem="u5s-Wk-N8z" firstAttribute="leading" secondItem="PMY-Tb-yOb" secondAttribute="trailing" constant="8" symbolic="YES" id="yva-4l-49H"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="todolable" destination="uCz-9J-9K6" id="5ew-nr-1Kf"/>
+                                            <outlet property="lalbel" destination="uCz-9J-9K6" id="aA8-V3-KWE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,12 +80,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Todo " id="EaV-7o-S2N"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272.80000000000001" y="145.27736131934034"/>
+            <point key="canvasLocation" x="1212" y="145.27736131934034"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Todo Detail-->
         <scene sceneID="6PU-Fa-dCE">
             <objects>
                 <viewController id="Svv-dW-9Fy" customClass="DetailViewController" customModule="Todo_Assigment2" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,10 +99,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Todo Detail" id="Wii-eq-EPc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTC-ct-Llu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="145"/>
+            <point key="canvasLocation" x="2055.1999999999998" y="144.3778110944528"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FAK-24-BC7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kt0-Kd-fK2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2P5-bP-GsQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nJP-Gg-APC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmw-ob-DQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272.80000000000001" y="145.27736131934034"/>
         </scene>
     </scenes>
 </document>

@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource {
 
-    let data: [String]=["Task1","Task2","Task3"]
+    @IBOutlet weak var lable: UILabel!
+    let data: [String]=["Pay Mobile Bill","iOS Swift Assigment 2","Android Assigment 2","Node Api","Capstone Project Work","Pay Rent"]
     
    
     override func viewDidLoad() {
@@ -32,6 +33,13 @@ class ViewController: UIViewController,UITableViewDataSource {
     }
     
     
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,17 +47,20 @@ class ViewController: UIViewController,UITableViewDataSource {
 
     //loading data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for :indexPath) as! CustomTodoTableViewCell
         
         //cell.textLabel?.text = self.items[indexPath.row]
       //  int row = indexPath.row
-        cell.textLabel?.text=data[indexPath.row]
+        //cell.?.text=data[indexPath.row]
         
+        cell.lalbel.text=self.data[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
+  
+    
     
 }
 

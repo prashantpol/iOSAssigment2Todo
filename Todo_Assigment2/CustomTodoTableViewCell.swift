@@ -3,7 +3,7 @@
 //  Todo_Assigment2
 //
 //  Created by Prashant Pol on 2017-01-31.
-//   Studend ID : 300906092
+
 //  Copyright © 2017 Polorg. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ import UIKit
 class CustomTodoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var todolable: UILabel!
+    @IBOutlet weak var lalbel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,13 +22,13 @@ class CustomTodoTableViewCell: UITableViewCell {
     @IBAction func todoSwtiched(_ sender: UISwitch) {
       if(sender.isOn)
       {
-        todolable.textColor=UIColor.black;
-        todolable.font=UIFont.italicSystemFont(ofSize: 20)
+        lalbel.textColor=UIColor.black;
+        lalbel.font=UIFont.systemFont(ofSize: 18, weight: 0)
         }
         else
       {
-        todolable.textColor=UIColor.lightGray;
-        todolable.font=UIFont.italicSystemFont(ofSize: 20)
+        lalbel.textColor=UIColor.lightGray;
+        lalbel.font=UIFont.italicSystemFont(ofSize: 20)
         }
     
     }
